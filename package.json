@@ -1,0 +1,103 @@
+{
+  "name": "data-pipelines",
+  "version": "4.0.0",
+  "private": true,
+  "homepage": "",
+  "scripts": {
+    "start": "DISABLE_ESLINT_PLUGIN=true PORT=4405 react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "lint:css": "stylelint './src/**/*.js'",
+    "eject": "react-app-rewired eject",
+    "docker": "cd ../ && docker-compose up",
+    "docker-build": "cd ../ && docker-compose build",
+    "docker:prod": "cd ../ && docker-compose -f docker-compose.production.yml up",
+    "docker-build:prod": "cd ../ && docker-compose -f docker-compose.production.yml build"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "axios": "^0.21.1",
+    "bootstrap": "^5.1.1",
+    "casdoor-js-sdk": "^0.14.0",
+    "casdoor-react-sdk": "^1.2.0",
+    "customize-cra": "^1.0.0",
+    "final-form": "^4.20.2",
+    "jwt-decode": "^4.0.0",
+    "lodash.range": "^3.2.0",
+    "mdi-react": "^9.4.0",
+    "moment": "^2.26.0",
+    "nats.ws": "^1.27.0",
+    "nats": "^2.26.0",
+    "nkeys.js": "^1.1.0",
+    "polished": "^4.0.5",
+    "prop-types": "^15.7.2",
+    "rc-notification": "^4.5.4",
+    "rc-time-picker": "^3.7.3",
+    "rc-tooltip": "^5.0.1",
+    "react": "^17.0.1",
+    "react-big-calendar": "^0.35.0",
+    "react-bootstrap": "^2.2.1",
+    "react-color": "^2.19.3",
+    "react-datepicker": "^3.7.0",
+    "react-device-detect": "^1.15.0",
+    "react-dom": "^17.0.1",
+    "react-draft-wysiwyg": "^1.14.7",
+    "react-dropzone": "^11.2.4",
+    "react-error-boundary": "^4.0.13",
+    "react-final-form": "^6.5.9",
+    "react-plotly.js": "^2.6.0",
+    "plotly.js": "^2.33.0",
+    "react-redux": "^8.0.2",
+    "react-router": "^6.23.1",
+    "react-router-dom": "^6.23.1",
+    "react-scripts": "^5.0.1",
+    "react-select": "^5.8.0",
+    "react-slick": "^0.27.13",
+    "react-smooth-scrollbar": "^8.0.6",
+    "react-syntax-highlighter": "^15.4.3",
+    "react-table": "^7.6.3",
+    "react-text-mask": "^5.4.3",
+    "reactflow": "^11.11.3",
+    "recharts": "^2.12.7",
+    "redux": "^4.0.5",
+    "redux-actions": "^2.6.5",
+    "redux-thunk": "^2.3.0",
+    "slick-carousel": "^1.8.1",
+    "smooth-scrollbar": "^8.5.3",
+    "split-type": "^0.3.1",
+    "styled-components": "^5.3.3",
+    "styled-theming": "^2.2.0"
+  },
+  "resolutions": {
+    "styled-components": "^5",
+    "@mui/styled-engine": "npm:@mui/styled-engine-sc@latest",
+    "react-error-overlay": "6.0.9"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-import-resolver-node": "^0.3.4",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "react-app-rewired": "^2.1.8",
+    "react-error-overlay": "6.0.9"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

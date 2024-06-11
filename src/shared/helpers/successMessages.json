@@ -1,0 +1,37 @@
+{
+    "system_settings": {
+        "register_company": "Company registered successfully!",
+        "update_company": "Company details updated successfully!",
+        "register_fleet": "Fleet registered successfully!",
+        "update_fleet": "Fleet details updated successfully!",
+        "register_depot": "Depot registered successfully!",
+        "update_depot": "Depot details updated successfully!",
+        "register_user": "User registered successfully!",
+        "update_user": "User details updated successfully!",
+        "register_company_relation": "Business relation added successfully!",
+        "update_company_relation": "Business relation updated successfully!"
+    },
+    "diagnostics":{
+        "send_can_request": "Request sent successfully!",
+        "get_csv_request": "Success"
+    },
+    "maintenance": {
+        "register_preventive_maintenance": "Preventive maintenance added successfully!"
+    },
+    "manage_assets":{
+        "register_vehicle": "Vehicle registered successfully!",
+        "update_vehicle": "Vehicle details updated successfully!",
+        "register_gateway": "Gateway added successfully!",
+        "register_hvac": "HVAC added successfully!",
+        "update_hvac": "HVAC updated successfully!",
+        "delete_hvac": "HVAC deleted successfully!"
+    },
+    "vehicle_dashboard": {
+        "register_tag": "Tag added successfully!",
+        "remove_tag": "Tag removed successfully!"
+    },
+    "gateway": {
+        "register_cpu_number": "Gateway details added successfully!",
+        "register_sim_master": "Sim details added successfully!"
+    }
+}
