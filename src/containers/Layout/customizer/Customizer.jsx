@@ -1,12 +1,13 @@
-import React from 'react';
-import { useLocation } from 'react-router-dom';
-import OffCanvas from '@/shared/components/OffCanvas';
-import { useSelector } from 'react-redux';
-import ConfigForm from '../../Dashboards/ConfigForm';
+import React from "react";
+import { useLocation } from "react-router-dom";
+import OffCanvas from "@/shared/components/OffCanvas";
+import { useSelector } from "react-redux";
+import ConfigForm from "../../Dashboards/ConfigForm";
 
 const Customizer = () => {
   const location = useLocation();
   const { panelState } = useSelector((state) => state.formTypeReducer);
+  console.log("panel", panelState);
 
   return (
     // location.pathname === '/home' ? (

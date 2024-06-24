@@ -1,19 +1,22 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import { ThemeProvider } from 'styled-components';
-import { Provider, useSelector } from 'react-redux';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { createTheme, ThemeProvider as MuiThemeProvider } from '@material-ui/core/styles';
-import TimepickerStyles from '@/shared/components/form/date-pickers/timepickerStyles';
-import Router from './Router';
-import store from './store';
-import ScrollToTop from './ScrollToTop';
-import GlobalStyles from './globalStyles';
-import RechartStyles from './rechartStyles';
-import NotificationStyles from './notificationStyles';
-import CalendarStyles from './calendarStyles';
-import { ErrorBoundary } from 'react-error-boundary';
-import ErrorFallback from './ErrorFallback';
+import React from "react";
+import PropTypes from "prop-types";
+import { ThemeProvider } from "styled-components";
+import { Provider, useSelector } from "react-redux";
+import "bootstrap/dist/css/bootstrap.min.css";
+import {
+  createTheme,
+  ThemeProvider as MuiThemeProvider,
+} from "@material-ui/core/styles";
+import TimepickerStyles from "@/shared/components/form/date-pickers/timepickerStyles";
+import Router from "./Router";
+import store from "./store";
+import ScrollToTop from "./ScrollToTop";
+import GlobalStyles from "./globalStyles";
+import RechartStyles from "./rechartStyles";
+import NotificationStyles from "./notificationStyles";
+import CalendarStyles from "./calendarStyles";
+import { ErrorBoundary } from "react-error-boundary";
+import ErrorFallback from "./ErrorFallback";
 
 const ThemeComponent = ({ children }) => {
   const mode = useSelector((state) => state.theme.className);

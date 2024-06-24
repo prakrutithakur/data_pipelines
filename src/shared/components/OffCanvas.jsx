@@ -1,10 +1,14 @@
-import { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { Offcanvas } from 'react-bootstrap';
-import styled from 'styled-components';
-import ChevronLeft from 'mdi-react/ChevronLeftIcon';
-import { colorBackground, colorHover } from '@/utils/palette';
-import { hideFormPanel } from '../../redux/actions/FormTypeActions/formType';
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { Offcanvas } from "react-bootstrap";
+import styled from "styled-components";
+import ChevronLeft from "mdi-react/ChevronLeftIcon";
+import { colorBackground, colorHover } from "@/utils/palette";
+import {
+  hideFormPanel,
+  showFormPanel,
+} from "../../redux/actions/FormTypeActions/formType";
+// import { hideFormPanel } from "../../redux/actions/FormTypeActions/formType";
 
 const OffCanvas = ({ isopen, children }) => {
   const dispatch = useDispatch();
@@ -13,14 +17,22 @@ const OffCanvas = ({ isopen, children }) => {
   useEffect(() => {
     if (isopen) {
       setShow(isopen);
+    } else {
+      console.log("isOpen");
+      setShow(isopen);
     }
   }, [isopen]);
 
   const handleClose = () => {
     setShow(false);
-    // dispatch(hideFormPanel());
+    dispatch(hideFormPanel());
   };
-  const handleShow = () => setShow(true);
+  const handleShow = () => {
+    setShow(true);
+    dispatch(
+      showFormPanel({ formType: 2, showForm: true, moduleId: 2, tab: 1 })
+    );
+  };
 
   return (
     <>
@@ -29,11 +41,16 @@ const OffCanvas = ({ isopen, children }) => {
           <ChevronLeft />
         </CustomizerButton>
       </CustomContainer>
-      <OffCanvasWrap show={show} onHide={handleClose} backdrop={false} placement="end">
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title style={{ marginLeft: '20px' }}>Configurations</Offcanvas.Title>
+      <OffCanvasWrap
+        show={show}
+        onHide={handleClose}
+        backdrop={false}
+        placement="end"
+      >
+        <Offcanvas.Header closeButton style={{ paddingLeft: "10px" }}>
+          <Offcanvas.Title>Device Configurations</Offcanvas.Title>
         </Offcanvas.Header>
-        <Offcanvas.Body>{children}</Offcanvas.Body>
+        <Offcanvas.Body style={{ padding: 0 }}>{children}</Offcanvas.Body>
       </OffCanvasWrap>
     </>
   );
@@ -74,7 +91,7 @@ const CustomizerButton = styled.button`
   color: #b1c3c8;
   background-color: ${colorBackground};
   z-index: 101;
-  
+
   &:hover {
     background-color: ${colorHover};
   }

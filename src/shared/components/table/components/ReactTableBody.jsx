@@ -1,10 +1,10 @@
-import React, { Fragment } from 'react';
-import { useSelector } from 'react-redux';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import { colorBackground } from '@/utils/palette';
-import { left } from '@/utils/directions';
-import DotDotLoader from '@/shared/components/DotDotLoader';
+import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import { colorBackground } from "@/utils/palette";
+import { left } from "@/utils/directions";
+import DotDotLoader from "@/shared/components/DotDotLoader";
 
 const ReactTableDefaultBody = ({
   page,
@@ -15,8 +15,8 @@ const ReactTableDefaultBody = ({
 }) => (
   <tbody {...getTableBodyProps()}>
     {tableOptions.isLoading && (
-      <tr style={{ padding: '0', border: 'none' }}>
-        <td style={{ padding: '0' }}>
+      <tr style={{ padding: "0", border: "none" }}>
+        <td style={{ padding: "0" }}>
           <PanelRefresh>
             <DotDotLoader loadingState={tableOptions.isLoading} />
           </PanelRefresh>
@@ -29,15 +29,15 @@ const ReactTableDefaultBody = ({
       return (
         <tr
           {...row.getRowProps()}
-          style={{ cursor: dashboardType !== 'Diagnostics' ? 'pointer' : '' }}
+          style={{ cursor: dashboardType !== "Diagnostics" ? "pointer" : "" }}
         >
           {row.cells.map((cell) =>
-            dashboardType !== '' ? (
+            dashboardType !== "" ? (
               <TableData {...cell.getCellProps()} bg={cell.row.original.color}>
-                <span>{cell.render('Cell')}</span>
+                <span>{cell.render("Cell")}</span>
               </TableData>
             ) : (
-              <td {...cell.getCellProps()}>{cell.render('Cell')}</td>
+              <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
             )
           )}
         </tr>
@@ -92,7 +92,6 @@ const TableData = styled.td`
       display: inline-block;
       padding: 2px;
       width: 84px;
-      color: #fff;
       text-align: center;
       white-space: nowrap;
       vertical-align: baseline;
@@ -124,7 +123,7 @@ const PanelRefresh = styled.div`
   ${left}: 0;
 
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     // height: 100%;

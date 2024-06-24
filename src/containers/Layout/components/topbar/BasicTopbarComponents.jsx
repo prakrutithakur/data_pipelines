@@ -1,14 +1,23 @@
-import styled from 'styled-components';
-import { lighten } from 'polished';
-import { Link } from 'react-router-dom';
-import DownIcon from 'mdi-react/ChevronDownIcon';
+import styled from "styled-components";
+import { lighten } from "polished";
+import { Link } from "react-router-dom";
+import DownIcon from "mdi-react/ChevronDownIcon";
 import {
-  colorIcon, colorRed, colorText, colorHover,
-  colorGray, colorBackground, logoImg,
-} from '@/utils/palette';
+  colorIcon,
+  colorRed,
+  colorText,
+  colorHover,
+  colorGray,
+  colorBackground,
+  logoImg,
+} from "@/utils/palette";
 import {
- translate, right, left, marginRight, marginLeft,
-} from '@/utils/directions';
+  translate,
+  right,
+  left,
+  marginRight,
+  marginLeft,
+} from "@/utils/directions";
 
 export const TopbarContainer = styled.div`
   position: fixed;
@@ -16,7 +25,7 @@ export const TopbarContainer = styled.div`
   width: 100%;
   top: 0;
   min-height: 60px;
-  z-index: 101;
+  z-index: 10000;
   box-shadow: 0 2px 15px 0 rgba(0, 0, 0, 0.05);
   background: ${colorBackground};
 
@@ -71,12 +80,11 @@ export const TopbarLogo = styled(Link)`
   }
 `;
 
-
 export const TopbarSearchWrap = styled.div`
   margin: 0;
   display: flex;
   height: 60px;
-  
+
   @media screen and (min-width: 576px) {
     margin: auto 0 auto 15px;
   }
@@ -115,7 +123,6 @@ export const TopbarButton = styled.button`
   }
 
   @keyframes beforePulse {
-
     from {
       width: 7px;
       height: 7px;

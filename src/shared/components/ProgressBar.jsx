@@ -1,7 +1,7 @@
-import React from 'react';
-import { ProgressBar as BootstrapProgressBar } from 'react-bootstrap';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
+import React from "react";
+import { ProgressBar as BootstrapProgressBar } from "react-bootstrap";
+import styled from "styled-components";
+import PropTypes from "prop-types";
 import {
   colorAccent,
   colorBlue,
@@ -11,12 +11,20 @@ import {
   colorText,
   colorViolet,
   colorYellow,
-} from '@/utils/palette';
-import { paddingRight, right } from '@/utils/directions';
+} from "@/utils/palette";
+import { paddingRight, right } from "@/utils/directions";
 
-const ProgressBar = ({ size, color, rounded, gradient, label, top, ...other }) => {
+const ProgressBar = ({
+  size,
+  color,
+  rounded,
+  gradient,
+  label,
+  top,
+  ...other
+}) => {
   const renderLabel = () => {
-    if (!label) return '';
+    if (!label) return "";
 
     return (
       <ProgressBarLabel top={top} color={color} gradient={gradient}>
@@ -26,7 +34,12 @@ const ProgressBar = ({ size, color, rounded, gradient, label, top, ...other }) =
   };
 
   return (
-    <ProgressBarWrap size={size} color={color} rounded={rounded} gradient={gradient}>
+    <ProgressBarWrap
+      size={size}
+      color={color}
+      rounded={rounded}
+      gradient={gradient}
+    >
       <BootstrapProgressBar label={renderLabel()} {...other} />
     </ProgressBarWrap>
   );
@@ -42,11 +55,11 @@ ProgressBar.propTypes = {
 };
 
 ProgressBar.defaultProps = {
-  size: 'default',
-  color: '',
-  gradient: '',
+  size: "default",
+  color: "",
+  gradient: "",
   rounded: false,
-  label: '',
+  label: "",
   top: false,
 };
 
@@ -56,34 +69,34 @@ export default ProgressBar;
 
 const getColor = (color) => {
   switch (color) {
-    case 'yellow':
+    case "yellow":
       return colorYellow;
-    case 'violet':
+    case "violet":
       return colorViolet;
-    case 'pink':
+    case "pink":
       return colorRed;
-    case 'blue':
+    case "blue":
       return colorBlue;
-    case 'green':
+    case "green":
       return colorGreen;
-    case 'lime':
+    case "lime":
       return colorGreen;
-    case 'total-vehicles':
-      return '#37BAEB';
-    case 'green-vehicles':
-      return '#006B38';
-    case 'orange-vehicles':
-      return '#F57A08';
-    case 'red-vehicles':
-      return '#DC2323';
-    case 'data-monitoring':
-      return '#FF754A';
-    case 'connectivity-status':
-      return '#B4C6CC';
-    case 'preventive-maintenance':
-      return '#F5A608';
-    case 'condition-based':
-      return '#DC2323';
+    case "total-vehicles":
+      return "#37BAEB";
+    case "green-vehicles":
+      return "#006B38";
+    case "orange-vehicles":
+      return "#F57A08";
+    case "red-vehicles":
+      return "#DC2323";
+    case "data-monitoring":
+      return "#FF754A";
+    case "connectivity-status":
+      return "#B4C6CC";
+    case "preventive-maintenance":
+      return "#F5A608";
+    case "condition-based":
+      return "#DC2323";
     default:
       return colorAccent;
   }
@@ -91,45 +104,45 @@ const getColor = (color) => {
 
 const getSize = (size) => {
   switch (size) {
-    case 'small':
-      return '8px';
-    case 'middle':
-      return '12px';
-    case 'big':
-      return '16px';
+    case "small":
+      return "8px";
+    case "middle":
+      return "12px";
+    case "big":
+      return "16px";
     default:
-      return '4px';
+      return "4px";
   }
 };
 
 const getGradient = (gradient) => {
   switch (gradient) {
-    case 'pink':
-      return '#ff7e9a, #ff4861';
-    case 'lime':
-      return '#d8efc1, #b8e986)';
-    case 'blue':
-      return '#7edbff, #48b5ff';
-    case 'turquoise':
-      return ' #a6efda, #4ce1b6';
-    case 'total-vehicles':
-      return '#7EDBFF 2.34%, #48B5FF 90.28%';
-    case 'green-vehicles':
-      return '#006B38 100%, #006B38 100%';
-    case 'orange-vehicles':
-      return '#F57A08 100%, #F57A08 100%';
-    case 'red-vehicles':
-      return '#DC2323 100%, #DC2323 100%';
-    case 'data-monitoring':
-      return '#FF754A 100%, #FF754A 100%';
-    case 'connectivity-status':
-      return '#B4C6CC 100%, #B4C6CC 100%';
-    case 'preventive-maintenance':
-      return '#F5A608 100%, #F5A608 100%';
-    case 'condition-based':
-      return '#DC2323 100%, #DC2323 100%';
+    case "pink":
+      return "#ff7e9a, #ff4861";
+    case "lime":
+      return "#d8efc1, #b8e986)";
+    case "blue":
+      return "#7edbff, #48b5ff";
+    case "turquoise":
+      return " #a6efda, #4ce1b6";
+    case "total-vehicles":
+      return "#7EDBFF 2.34%, #48B5FF 90.28%";
+    case "green-vehicles":
+      return "#006B38 100%, #006B38 100%";
+    case "orange-vehicles":
+      return "#F57A08 100%, #F57A08 100%";
+    case "red-vehicles":
+      return "#DC2323 100%, #DC2323 100%";
+    case "data-monitoring":
+      return "#FF754A 100%, #FF754A 100%";
+    case "connectivity-status":
+      return "#B4C6CC 100%, #B4C6CC 100%";
+    case "preventive-maintenance":
+      return "#F5A608 100%, #F5A608 100%";
+    case "condition-based":
+      return "#DC2323 100%, #DC2323 100%";
     default:
-      return '';
+      return "";
   }
 };
 
@@ -163,17 +176,20 @@ const ProgressBarWrap = styled.div`
   }
 
   .progress-bar {
-    background-color: ${(props) => (props.gradient ? 'unset' : getColor(props.color))};
+    background-color: ${(props) =>
+      props.gradient ? "unset" : getColor(props.color)};
     ${(props) =>
       props.gradient &&
-      `background-image: linear-gradient(to left, ${getGradient(props.gradient)});`};
+      `background-image: linear-gradient(to left, ${getGradient(
+        props.gradient
+      )});`};
     color: ${colorText};
     box-shadow: none;
     height: ${(props) => getSize(props.size)};
     text-align: ${right};
     font-size: 9px;
     line-height: 13px;
-    border-radius: ${(props) => (props.rounded ? '5px' : 0)};
+    border-radius: ${(props) => (props.rounded ? "5px" : 0)};
   }
 `;
 

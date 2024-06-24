@@ -1,33 +1,33 @@
-import React from 'react';
-import { Routes, Route, useLocation, useParams, Link } from 'react-router-dom';
-import { ErrorBoundary } from 'react-error-boundary';
-import styled from 'styled-components';
-import { colorBackgroundBody } from '@/utils/palette';
-import { paddingLeft } from '@/utils/directions';
-import Layout from '../../../Layout/index';
+import React from "react";
+import { Routes, Route, useLocation, useParams, Link } from "react-router-dom";
+import { ErrorBoundary } from "react-error-boundary";
+import styled from "styled-components";
+import { colorBackgroundBody } from "@/utils/palette";
+import { paddingLeft } from "@/utils/directions";
+import Layout from "../../../Layout/index";
 // import Breadcrumbs from './Breadcrumbs';
-import AutoLogout from './AutoLogout';
-import NotFound404 from '../../../DefaultPage/404';
-import ErrorFallback from '../../ErrorFallback';
-import GlobalDashboard from '../../../Dashboards/Home';
+import AutoLogout from "./AutoLogout";
+import NotFound404 from "../../../DefaultPage/404";
+import ErrorFallback from "../../ErrorFallback";
+import GlobalDashboard from "../../../Dashboards/Home";
 
 const AppRoutes = () => {
-  const userDetails = JSON.parse(localStorage.getItem('user'));
+  const userDetails = JSON.parse(localStorage.getItem("user"));
 
   const routes = [
     {
-      path: '/global',
-      name: 'Global Dashboard',
+      path: "/global",
+      name: "Global Dashboard",
       Component: GlobalDashboard,
-      userRole: '',
-      companyRole: '',
+      userRole: "",
+      companyRole: "",
     },
     {
-      path: '/dashboard',
-      name: 'Global Dashboard',
+      path: "/dashboard",
+      name: "Global Dashboard",
       Component: GlobalDashboard,
-      userRole: '',
-      companyRole: '',
+      userRole: "",
+      companyRole: "",
     },
   ];
 
@@ -69,9 +69,9 @@ const RouteWrapper = ({ children, name }) => {
 };
 
 const generateBreadcrumbs = (location) => {
-  const pathnames = location.pathname.split('/').filter((x) => x);
+  const pathnames = location.pathname.split("/").filter((x) => x);
   return pathnames.map((value, index) => {
-    const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+    const routeTo = `/${pathnames.slice(0, index + 1).join("/")}`;
     return { name: value, path: routeTo };
   });
 };
@@ -82,7 +82,7 @@ const Breadcrumbs = ({ crumbs }) => {
       {crumbs.map((crumb, index) => (
         <span key={index}>
           <Link to={crumb.path}>{crumb.name}</Link>
-          {index < crumbs.length - 1 && ' / '}
+          {index < crumbs.length - 1 && " / "}
         </span>
       ))}
     </nav>
